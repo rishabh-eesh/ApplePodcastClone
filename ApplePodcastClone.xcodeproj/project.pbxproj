@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11026FFE1B8264A7CF2375C8 /* Pods_ApplePodcastClone_ApplePodcastCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD483F4F94A310365B3514BE /* Pods_ApplePodcastClone_ApplePodcastCloneUITests.framework */; };
+		25C668D8078418DBD1FA3023 /* Pods_ApplePodcastCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B782F464A8B1FF64B983EC /* Pods_ApplePodcastCloneTests.framework */; };
 		28414E1D266287040091EE03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28414E1C266287040091EE03 /* AppDelegate.swift */; };
 		28414E1F266287040091EE03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28414E1E266287040091EE03 /* SceneDelegate.swift */; };
 		28414E21266287040091EE03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28414E20266287040091EE03 /* ViewController.swift */; };
@@ -15,6 +17,7 @@
 		28414E342662870E0091EE03 /* ApplePodcastCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28414E332662870E0091EE03 /* ApplePodcastCloneTests.swift */; };
 		28414E3F2662870E0091EE03 /* ApplePodcastCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28414E3E2662870E0091EE03 /* ApplePodcastCloneUITests.swift */; };
 		28D6824926628B5800340828 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D6824826628B5800340828 /* MainTabBarController.swift */; };
+		2BE1447B6F359EF20C79FCFD /* Pods_ApplePodcastClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD695951704A014FA1484FF /* Pods_ApplePodcastClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AF9AF82F09A8B399B4E01DF /* Pods-ApplePodcastClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplePodcastClone.release.xcconfig"; path = "Target Support Files/Pods-ApplePodcastClone/Pods-ApplePodcastClone.release.xcconfig"; sourceTree = "<group>"; };
+		155A4DBBC2F055EEB686E7DF /* Pods-ApplePodcastCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplePodcastCloneTests.release.xcconfig"; path = "Target Support Files/Pods-ApplePodcastCloneTests/Pods-ApplePodcastCloneTests.release.xcconfig"; sourceTree = "<group>"; };
+		1EE729E90964CD568AA1E067 /* Pods-ApplePodcastClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplePodcastClone.debug.xcconfig"; path = "Target Support Files/Pods-ApplePodcastClone/Pods-ApplePodcastClone.debug.xcconfig"; sourceTree = "<group>"; };
 		28414E19266287040091EE03 /* ApplePodcastClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePodcastClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28414E1C266287040091EE03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28414E1E266287040091EE03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		28414E3E2662870E0091EE03 /* ApplePodcastCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePodcastCloneUITests.swift; sourceTree = "<group>"; };
 		28414E402662870E0091EE03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28D6824826628B5800340828 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		73B782F464A8B1FF64B983EC /* Pods_ApplePodcastCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplePodcastCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8420D768B2305ADB7E5A33D /* Pods-ApplePodcastClone-ApplePodcastCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplePodcastClone-ApplePodcastCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-ApplePodcastClone-ApplePodcastCloneUITests/Pods-ApplePodcastClone-ApplePodcastCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D913EF96E15BB0A6633B5D5A /* Pods-ApplePodcastClone-ApplePodcastCloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplePodcastClone-ApplePodcastCloneUITests.release.xcconfig"; path = "Target Support Files/Pods-ApplePodcastClone-ApplePodcastCloneUITests/Pods-ApplePodcastClone-ApplePodcastCloneUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DD483F4F94A310365B3514BE /* Pods_ApplePodcastClone_ApplePodcastCloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplePodcastClone_ApplePodcastCloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD695951704A014FA1484FF /* Pods_ApplePodcastClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplePodcastClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDBF91E58B7E0C655C18BD24 /* Pods-ApplePodcastCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplePodcastCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-ApplePodcastCloneTests/Pods-ApplePodcastCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE1447B6F359EF20C79FCFD /* Pods_ApplePodcastClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25C668D8078418DBD1FA3023 /* Pods_ApplePodcastCloneTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11026FFE1B8264A7CF2375C8 /* Pods_ApplePodcastClone_ApplePodcastCloneUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				28414E322662870E0091EE03 /* ApplePodcastCloneTests */,
 				28414E3D2662870E0091EE03 /* ApplePodcastCloneUITests */,
 				28414E1A266287040091EE03 /* Products */,
+				ACA19330D05E73B2CF1DF59A /* Pods */,
+				D619B584E77E8D6887DB65E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +217,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		ACA19330D05E73B2CF1DF59A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EE729E90964CD568AA1E067 /* Pods-ApplePodcastClone.debug.xcconfig */,
+				0AF9AF82F09A8B399B4E01DF /* Pods-ApplePodcastClone.release.xcconfig */,
+				A8420D768B2305ADB7E5A33D /* Pods-ApplePodcastClone-ApplePodcastCloneUITests.debug.xcconfig */,
+				D913EF96E15BB0A6633B5D5A /* Pods-ApplePodcastClone-ApplePodcastCloneUITests.release.xcconfig */,
+				EDBF91E58B7E0C655C18BD24 /* Pods-ApplePodcastCloneTests.debug.xcconfig */,
+				155A4DBBC2F055EEB686E7DF /* Pods-ApplePodcastCloneTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D619B584E77E8D6887DB65E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAD695951704A014FA1484FF /* Pods_ApplePodcastClone.framework */,
+				DD483F4F94A310365B3514BE /* Pods_ApplePodcastClone_ApplePodcastCloneUITests.framework */,
+				73B782F464A8B1FF64B983EC /* Pods_ApplePodcastCloneTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,6 +248,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28414E432662870E0091EE03 /* Build configuration list for PBXNativeTarget "ApplePodcastClone" */;
 			buildPhases = (
+				D5B75131CC35FEE64F0BEB42 /* [CP] Check Pods Manifest.lock */,
 				28414E15266287040091EE03 /* Sources */,
 				28414E16266287040091EE03 /* Frameworks */,
 				28414E17266287040091EE03 /* Resources */,
@@ -224,6 +266,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28414E462662870E0091EE03 /* Build configuration list for PBXNativeTarget "ApplePodcastCloneTests" */;
 			buildPhases = (
+				A0DB6DD3349E2C494DDB30A2 /* [CP] Check Pods Manifest.lock */,
 				28414E2B2662870E0091EE03 /* Sources */,
 				28414E2C2662870E0091EE03 /* Frameworks */,
 				28414E2D2662870E0091EE03 /* Resources */,
@@ -242,6 +285,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28414E492662870E0091EE03 /* Build configuration list for PBXNativeTarget "ApplePodcastCloneUITests" */;
 			buildPhases = (
+				C192CB134E494B4AA366D886 /* [CP] Check Pods Manifest.lock */,
 				28414E362662870E0091EE03 /* Sources */,
 				28414E372662870E0091EE03 /* Frameworks */,
 				28414E382662870E0091EE03 /* Resources */,
@@ -323,6 +367,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0DB6DD3349E2C494DDB30A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApplePodcastCloneTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C192CB134E494B4AA366D886 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApplePodcastClone-ApplePodcastCloneUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5B75131CC35FEE64F0BEB42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApplePodcastClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28414E15266287040091EE03 /* Sources */ = {
@@ -497,6 +610,7 @@
 		};
 		28414E442662870E0091EE03 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EE729E90964CD568AA1E067 /* Pods-ApplePodcastClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -516,6 +630,7 @@
 		};
 		28414E452662870E0091EE03 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AF9AF82F09A8B399B4E01DF /* Pods-ApplePodcastClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -535,6 +650,7 @@
 		};
 		28414E472662870E0091EE03 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDBF91E58B7E0C655C18BD24 /* Pods-ApplePodcastCloneTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -557,6 +673,7 @@
 		};
 		28414E482662870E0091EE03 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 155A4DBBC2F055EEB686E7DF /* Pods-ApplePodcastCloneTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -579,6 +696,7 @@
 		};
 		28414E4A2662870E0091EE03 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8420D768B2305ADB7E5A33D /* Pods-ApplePodcastClone-ApplePodcastCloneUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -599,6 +717,7 @@
 		};
 		28414E4B2662870E0091EE03 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D913EF96E15BB0A6633B5D5A /* Pods-ApplePodcastClone-ApplePodcastCloneUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
