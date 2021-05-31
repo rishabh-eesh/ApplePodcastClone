@@ -1,3 +1,3 @@
 # ApplePodcastClone
 
-[![Build status](https://build.appcenter.ms/v0.1/apps/bc5535fc-9661-4294-a1d1-700c368c5273/branches/dev/badge)](https://appcenter.ms)
+[![Build status](https://build.appcenter.ms/v0.1/apps/4b375eb2-3fbe-4f4d-ae4c-f2126568c786/branches/dev/badge)](https://appcenter.ms)
