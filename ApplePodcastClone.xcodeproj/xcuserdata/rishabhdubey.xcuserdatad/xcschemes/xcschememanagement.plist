@@ -6,8 +6,28 @@
 	<dict>
 		<key>ApplePodcastClone.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>28414E18266287040091EE03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28414E2E2662870E0091EE03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28414E392662870E0091EE03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
