@@ -20,8 +20,8 @@ class MainTabBarController: UITabBarController {
     // MARK: - TabBar ViewControllers Setup
     fileprivate func setupViewController() {
         viewControllers = [
+            createTabBarController(viewController: PodcastSearchViewController(), title: "Search", imageName: TabBarIcon.search.rawValue),
             createTabBarController(viewController: ViewController(), title: "Favorites", imageName: TabBarIcon.favorites.rawValue),
-            createTabBarController(viewController: ViewController(), title: "Search", imageName: TabBarIcon.search.rawValue),
             createTabBarController(viewController: ViewController(), title: "Downloads", imageName: TabBarIcon.downloads.rawValue)
         ]
     }
