@@ -12,6 +12,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.accessibilityIdentifier = "MainTabBarController"
+        
         tabBar.tintColor = .purple
         
         setupViewController()

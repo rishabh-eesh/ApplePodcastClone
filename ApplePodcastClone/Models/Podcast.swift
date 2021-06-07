@@ -15,4 +15,11 @@ struct SearchResults: Decodable {
 struct Podcast: Decodable {
     let artistName: String?
     let trackName: String?
+    let primaryGenreName: String
+    let artworkUrl600: String?
+    let feedUrl: String?
+    
+    var podcastUrl: URL? {
+        return URL(string: artworkUrl600 ?? "")
+    }
 }
