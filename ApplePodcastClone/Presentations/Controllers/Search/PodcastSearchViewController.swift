@@ -7,28 +7,29 @@
 
 import UIKit
 import AppCenterAnalytics
+import SDWebImage
 
 class PodcastSearchViewController: UITableViewController {
     
-    var dummyPodcasts = [Podcast]()
+    private var viewModel: PodcastSearchViewModel!
     
     private var searchTask: DispatchWorkItem?
-    
     let searchController = UISearchController(searchResultsController: nil)
     
-    private let cellID = "cellId"
-    
+    //MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel = PodcastSearchViewModel(service: NetworkService.shared)
+        
         setupTableView()
         setupSearchBar()
-        
-        
+        setupBindings()
     }
     
     fileprivate func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.accessibilityIdentifier = "PodcastSearchTable"
+        tableView.register(PodcastCell.self)
     }
     
     fileprivate func setupSearchBar() {
@@ -37,33 +38,26 @@ class PodcastSearchViewController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
     }
+    
+    fileprivate func setupBindings() {
+        viewModel.podcasts.bind { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension PodcastSearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         searchTask?.cancel()
-        let task = DispatchWorkItem {
-            
-            NetworkService.shared.fetch(endPoint: .search(matching: searchText)) { (results: SearchResults?, error) in
-                if let error = error {
-                    print("Failed to get search data: ", error)
-                    return
-                }
-                
-                //success
-                guard let searchResults = results else { return }
-                self.dummyPodcasts = searchResults.results
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
+        let task = DispatchWorkItem { [weak self] in
+            // fetch search results from api
+            self?.viewModel.searchText = searchText
         }
         
         searchTask = task
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: task)
     }
 }
@@ -71,21 +65,21 @@ extension PodcastSearchViewController: UISearchBarDelegate {
 extension PodcastSearchViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dummyPodcasts.count
+        viewModel.podcasts.value?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        
-        let podcast = dummyPodcasts[indexPath.row]
-        cell.imageView?.image = #imageLiteral(resourceName: "favorites")
-        cell.textLabel?.text = "\(podcast.artistName ?? "")\n\(podcast.trackName ?? "")"
-        cell.textLabel?.numberOfLines = 0
-        
+        guard let podcast = viewModel.podcasts.value?[indexPath.row] else { preconditionFailure("Didn't get the podcast in search") }
+        let cell = tableView.dequeueReusableCell(PodcastCell.self)!
+        cell.podcast = podcast
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Analytics.trackEvent(dummyPodcasts[indexPath.row].artistName ?? "")
+//        Analytics.trackEvent(dummyPodcasts[indexPath.row].artistName ?? "")
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
     }
 }

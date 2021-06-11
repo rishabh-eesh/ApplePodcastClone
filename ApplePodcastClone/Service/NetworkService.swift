@@ -8,17 +8,16 @@
 import Foundation
 
 protocol Networking {
-    func fetch<T: Decodable>(endPoint: EndPoint, completion: @escaping (T?, Error?) -> ())
+    func execute<T: Decodable>(requestProvider: RequestProviding, completion: @escaping (T?, Error?) -> ())
 }
 
 class NetworkService: Networking {
     
     static let shared = NetworkService()
     
-    func fetch<T: Decodable>(endPoint: EndPoint, completion: @escaping (T?, Error?) -> ()) {
-        guard let url = endPoint.url else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+    func execute<T: Decodable>(requestProvider: RequestProviding, completion: @escaping (T?, Error?) -> ()) {
+//        guard let url = requestProvider.urlRequest else { return }
+        URLSession.shared.dataTask(with: requestProvider.create()) { (data, response, error) in
             if let error = error {
                 completion(nil, error)
                 return
@@ -34,12 +33,8 @@ class NetworkService: Networking {
                 completion(nil, error)
             }
         }.resume()
-        
-        
     }
 }
-
-
 
 //MARK: - EndPoints
 ///https://itunes.apple.com/search?term=garyvee&media=podcast
@@ -58,30 +53,5 @@ enum APIError: Error {
         case .jsonParsingFailure: return "JSON Parsing Failure"
         case .jsonConversionFailure: return "JSON Conversion Failure"
         }
-    }
-}
-
-struct EndPoint {
-    let path: String
-    let queryItems: [URLQueryItem]
-}
-
-extension EndPoint {
-    
-    // Search Podcast
-    static func search(matching query: String) -> EndPoint {
-        return EndPoint(path: "/search", queryItems: [
-            .init(name: "term", value: query),
-            .init(name: "media", value: "podcast")
-        ])
-    }
-    
-    var url: URL? {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "itunes.apple.com"
-        components.path = path
-        components.queryItems = queryItems
-        return components.url
     }
 }
