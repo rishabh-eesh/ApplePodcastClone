@@ -10,9 +10,9 @@ import UIKit
 class PodcastCell: UITableViewCell {
     
     let podcastImageView = UIImageView(cornerRadius: 14, contentMode: .scaleAspectFit)
-    let primaryGenreName = UILabel(text: "Primary Genre Name", font: .boldSystemFont(ofSize: 13), textColor: .gray)
-    let artistName = UILabel(text: "Artist name", font: .systemFont(ofSize: 16), numberOfLines: 2)
-    let trackName = UILabel(text: "Track name", font: .systemFont(ofSize: 13), textColor: .gray, numberOfLines: 2)
+    let artistNameLabel = UILabel(text: "Artist name", font: .systemFont(ofSize: 16), numberOfLines: 2)
+    let trackNameLabel = UILabel(text: "Track name", font: .systemFont(ofSize: 14), textColor: .darkGray, numberOfLines: 2)
+    let trackCountLabel = UILabel(text: "No. of tracks", font: .boldSystemFont(ofSize: 13), textColor: .gray)
     
     override class func description() -> String {
         String(describing: self)
@@ -20,9 +20,11 @@ class PodcastCell: UITableViewCell {
     
     var podcast: Podcast! {
         didSet {
-            primaryGenreName.text = podcast.primaryGenreName.uppercased()
-            artistName.text = podcast.artistName
-            trackName.text = podcast.trackName
+            artistNameLabel.text = podcast.artistName
+            trackNameLabel.text = podcast.trackName
+            
+            let episodeString = podcast.trackCount ?? 0 > 1 ? "Episodes" : "Episode"
+            trackCountLabel.text = "\(podcast.trackCount ?? 0) \(episodeString)"
 
             podcastImageView.sd_setImage(with: podcast.podcastUrl)
         }
@@ -30,7 +32,6 @@ class PodcastCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        
         setupViews()
     }
     
@@ -41,9 +42,9 @@ class PodcastCell: UITableViewCell {
         let stackView = HStackView(arrangedSubviews: [
             podcastImageView,
             VStackView(arrangedSubviews: [
-                primaryGenreName,
-                artistName,
-                trackName
+                artistNameLabel,
+                trackNameLabel,
+                trackCountLabel
             ], spacing: 6)
         ], spacing: 16)
         
