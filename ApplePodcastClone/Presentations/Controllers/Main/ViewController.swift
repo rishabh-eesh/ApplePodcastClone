@@ -8,18 +8,12 @@
 import UIKit
 //import AppCenterAnalytics
 
-class ViewController: UIViewController {
-
-    let greetingLabel = UILabel(text: "Hello", font: .boldSystemFont(ofSize: 16))
+class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        view.addSubview(greetingLabel)
-        greetingLabel.centerInSuperview()
-        
-        greetingLabel.text = getGreeting()
     }
     
     func getGreeting() -> String {
@@ -39,8 +33,20 @@ class ViewController: UIViewController {
         }
         return greetingText
     }
+}
+
+class ViewController: BaseViewController {
+
+    let greetingLabel = UILabel(text: "Hello", font: .boldSystemFont(ofSize: 16))
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(greetingLabel)
+        greetingLabel.centerInSuperview()
+        
+        greetingLabel.text = getGreeting()
+    }
 }
 
 extension String {

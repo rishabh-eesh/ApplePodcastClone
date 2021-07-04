@@ -25,14 +25,29 @@ class EpisodesController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         viewModel = EpisodesViewModel(feedUrl: podcast.feedUrl)
         setupView()
         setupTableView()
         setupBindings()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
+    }
+    
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        
+    }
+    
     fileprivate func setupView() {
         title = podcast.trackName
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("NotificationIdentifier"), object: nil)
     }
     
     fileprivate func setupTableView() {
@@ -53,6 +68,7 @@ class EpisodesController: UITableViewController {
     }
 }
 
+// MARK:- UITableView Delegates
 extension EpisodesController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,52 +82,25 @@ extension EpisodesController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showPlayerView(indexPath)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
     }
-}
-
-class EpisodeCell: UITableViewCell {
     
-    var episode: Episode! {
-        didSet {
-            titleLabel.text = episode.title
-            descriptionLabel.text = episode.description
-            
-            episodeImageView.sd_setImage(with: episode.episodeUrl)
-        }
-    }
-    
-    let episodeImageView = UIImageView(cornerRadius: 14, contentMode: .scaleAspectFit)
-    let pubDateLabel = UILabel(text: "Track name", font: .systemFont(ofSize: 14), textColor: .darkGray, numberOfLines: 2)
-    let titleLabel = UILabel(text: "Artist name", font: .systemFont(ofSize: 16), numberOfLines: 2)
-    let descriptionLabel = UILabel(text: "No. of tracks", font: .boldSystemFont(ofSize: 13), textColor: .gray, numberOfLines: 2)
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+    func showPlayerView(_ indexPath: IndexPath) {
+        let episode = viewModel.episodes.value?[indexPath.row]
+        let mainTabBarController = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController as? MainTabBarController
+        mainTabBarController?.maximizePlayer(episode: episode)
         
-        setupViews()
-    }
-    
-    fileprivate func setupViews() {
-        episodeImageView.constrainWidth(constant: 70)
-        episodeImageView.constrainHeight(constant: 70)
-
-        let stackView = HStackView(arrangedSubviews: [
-            episodeImageView,
-            VStackView(arrangedSubviews: [
-                pubDateLabel,
-                titleLabel,
-                descriptionLabel
-            ], spacing: 6)
-        ], spacing: 16)
-        
-        stackView.alignment = .center
-        addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 8, left: 16, bottom: 8, right: 16))
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+//        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+//
+//        let playerView = PlayerView()
+//        playerView.episode = episode
+//        playerView.frame = view.frame
+//
+//        window?.addSubview(playerView)
     }
 }

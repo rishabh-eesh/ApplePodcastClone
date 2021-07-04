@@ -26,4 +26,18 @@ extension UILabel {
     }
 }
 
+extension UIButton {
+    convenience init(title: String, font: UIFont = .systemFont(ofSize: 14), titleColor: UIColor = .black) {
+        self.init(type: .system)
+        setTitle(title, for: .normal)
+        titleLabel?.font = font
+        setTitleColor(titleColor, for: .normal)
+    }
+}
 
+extension UIImage {
+    static func systemImage(imageName: String, color: UIColor = .black, size: CGFloat, weight: UIImage.SymbolWeight, scale: UIImage.SymbolScale) -> UIImage {
+        let config = UIImage.SymbolConfiguration(pointSize: size, weight: weight, scale: scale)
+        return UIImage(systemName: imageName, withConfiguration: config)!.withTintColor(color, renderingMode: .alwaysOriginal)
+    }
+}

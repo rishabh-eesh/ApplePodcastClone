@@ -93,6 +93,7 @@ extension PodcastSearchViewController {
         
         guard let podcast = viewModel.podcasts.value?[indexPath.row] else { return }
         
+//        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
         let episodesController = EpisodesController(podcast: podcast)
         navigationController?.pushViewController(episodesController, animated: true)
     }

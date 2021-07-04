@@ -20,15 +20,16 @@ class EpisodesViewModel {
     
     func fetchEpisodes(feedUrl: String) {
         guard let url = URL(string: feedUrl.toSecureHTTPS()) else { return }
-        
-        let parser = FeedParser(URL: url)
-        parser.parseAsync { (result) in
-            switch result {
-            case .success(let feed):
-                guard let rssFeed = feed.rssFeed else { return }
-                self.episodes.value = rssFeed.toEpisodes()
-            case .failure(let error):
-                debugPrint("Failed to get feed: ", error.localizedDescription)
+        DispatchQueue.global(qos: .background).async {
+            let parser = FeedParser(URL: url)
+            parser.parseAsync { (result) in
+                switch result {
+                case .success(let feed):
+                    guard let rssFeed = feed.rssFeed else { return }
+                    self.episodes.value = rssFeed.toEpisodes()
+                case .failure(let error):
+                    debugPrint("Failed to get feed: ", error.localizedDescription)
+                }
             }
         }
     }
