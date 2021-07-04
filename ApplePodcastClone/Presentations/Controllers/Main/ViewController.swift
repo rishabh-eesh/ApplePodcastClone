@@ -42,6 +42,7 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemRed
         view.addSubview(greetingLabel)
         greetingLabel.centerInSuperview()
         
